@@ -169,7 +169,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         s.removeAttribute('src');
       }
       const p = s.src ? new Promise(function(r) { s.onload = s.onerror = r; }) : null;
-      old.replaceWith(s);
+      if (old.parentNode) {
+        old.replaceWith(s);
+      }
       if (p) await p;
     }
     // Babel standalone auto-transforms type=text/babel on DOMContentLoaded,
