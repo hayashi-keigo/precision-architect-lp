@@ -908,7 +908,7 @@
         <p class="profile-bio">
           元システムエンジニア、データサイエンティスト。IT企業に10年ほど勤めた中で培った現場経験と、AI活用を含めたITスキルを掛け合わせ、小規模組織に最適化した業務改善の実行支援を行っている。
           <br><br>
-          企業ではエンジニアとしてだけでなく、PM・若手教育担当・講師など様々な立場で経験を積み、個人事業主としてチーム運営、イベント企画運営、コミュニティデザイン、Webライティングなどの経験を積んでいる。これらの経験を活かして、組織全体が本来のクリエイティビティを発揮できる環境づくりを支援している。
+          企業ではエンジニアとしてだけでなく、PM・若手教育担当・講師など様々な立場で経験を積み、2024年に独立後は多数のチームをサポート。ビジネス講座運営、イベント企画運営、コミュニティデザイン、AI講師、Webライティングなどの実績もあり。これらの経験を活かして、チーム全体が本来のクリエイティビティを発揮できる環境づくりを支援している。
         </p>
         <div class="profile-contact">
           <div class="profile-contact-title">Connect</div>
@@ -1046,6 +1046,35 @@
     formStatus.style.display = 'block';
   }
 
+  function showValidationError() {
+    setFormFeedback('error', '未入力の必須項目があります。会社名・お名前・メールアドレス・従業員規模を確認してください。');
+  }
+
+  submitBtn.addEventListener('click', () => {
+    if (!contactForm.checkValidity()) {
+      showValidationError();
+      contactForm.reportValidity();
+    }
+  });
+
+  contactForm.addEventListener('invalid', () => {
+    showValidationError();
+  }, true);
+
+  contactForm.addEventListener('input', () => {
+    if (contactForm.checkValidity() && formStatus.className === 'error') {
+      formStatus.style.display = 'none';
+      formStatus.className = '';
+    }
+  });
+
+  contactForm.addEventListener('change', () => {
+    if (contactForm.checkValidity() && formStatus.className === 'error') {
+      formStatus.style.display = 'none';
+      formStatus.className = '';
+    }
+  });
+
   // Obfuscated email links (avoid plain address in HTML source)
   document.querySelectorAll('.js-email-link').forEach((el) => {
     const user = el.dataset.emailUser;
@@ -1089,6 +1118,7 @@
     e.preventDefault();
 
     if (!contactForm.checkValidity()) {
+      showValidationError();
       contactForm.reportValidity();
       return;
     }
