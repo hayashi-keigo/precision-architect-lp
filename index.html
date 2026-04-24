@@ -272,11 +272,13 @@
   .pricing-grid {
     display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 2px; background: var(--surface-high); margin-top: 80px;
+    align-items: stretch;
   }
   .plan {
     background: var(--surface-lowest); padding: 56px 48px;
     display: flex; flex-direction: column;
     position: relative;
+    height: 100%;
   }
   .plan.featured {
     background: var(--primary); color: #fff;
@@ -288,22 +290,27 @@
   }
   .plan-audience {
     font-size: .78rem; line-height: 1.75; color: var(--on-surface-variant);
-    margin-bottom: 18px; font-weight: 600;
+    margin-bottom: 18px; font-weight: 600; min-height: 54px;
   }
   .plan.featured .plan-audience { color: var(--primary-dim); }
-  .plan-name { font-size: 1.2rem; font-weight: 800; letter-spacing: 0; color: var(--secondary); margin-bottom: 12px; }
+  .plan-name { font-size: 1.2rem; font-weight: 800; letter-spacing: 0; color: var(--secondary); margin-bottom: 12px; min-height: 34px; }
   .plan.featured .plan-name { color: var(--secondary-light); }
   .plan-summary { font-size: .95rem; line-height: 1.8; color: var(--on-surface-variant); margin-bottom: 22px; }
+  .plan-summary-main { min-height: 138px; }
+  .plan-summary-detail { min-height: 150px; }
   .plan.featured .plan-summary { color: var(--primary-dim); }
   .plan-price {
     font-family: var(--font-head); font-size: 3rem; font-weight: 900;
     letter-spacing: -.04em; color: var(--primary); line-height: 1;
-    margin-bottom: 6px;
+    margin-bottom: 6px; min-height: 58px;
+    display: flex; align-items: flex-end;
   }
   .plan.featured .plan-price { color: #fff; }
-  .plan-freq { font-size: .8rem; color: var(--on-surface-variant); margin-bottom: 32px; }
+  .plan-freq { font-size: .8rem; color: var(--on-surface-variant); margin-bottom: 32px; min-height: 22px; }
   .plan.featured .plan-freq { color: var(--primary-dim); }
   .plan-detail { margin-bottom: 28px; }
+  .plan-detail-content { min-height: 360px; }
+  .plan-detail-fit { min-height: 280px; }
   .plan-detail-title {
     font-size: .68rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
     color: var(--secondary); margin-bottom: 12px;
@@ -314,12 +321,13 @@
   .plan-features li::before { content: '—'; color: var(--secondary); font-weight: 700; flex-shrink: 0; }
   .plan.featured .plan-features li { color: var(--primary-dim); }
   .plan.featured .plan-features li::before { color: var(--secondary-light); }
-  .plan-note { font-size: .9rem; line-height: 1.75; color: var(--on-surface-variant); margin: auto 0 32px; }
+  .plan-note { font-size: .9rem; line-height: 1.75; color: var(--on-surface-variant); margin: 0 0 32px; min-height: 82px; }
   .plan.featured .plan-note { color: var(--primary-dim); }
   .plan-btn {
     font-family: var(--font-head); font-size: .85rem; font-weight: 700; letter-spacing: .08em;
-    padding: 16px 32px; border: none; cursor: pointer;
+    min-height: 56px; padding: 16px 32px; border: none; cursor: pointer;
     text-align: center; transition: all .2s; border-radius: 3px;
+    margin-top: auto; display: flex; align-items: center; justify-content: center;
   }
   .plan-btn.outline {
     background: transparent; color: var(--primary);
@@ -528,6 +536,15 @@
     .hero-cta-block { align-items: flex-start; }
     .pricing-grid { grid-template-columns: 1fr; }
     .plan { padding: 44px 32px; }
+    .plan-audience,
+    .plan-name,
+    .plan-summary-main,
+    .plan-summary-detail,
+    .plan-price,
+    .plan-freq,
+    .plan-detail-content,
+    .plan-detail-fit,
+    .plan-note { min-height: 0; }
     .plan-compare-grid { grid-template-columns: 1fr; }
     .plan-compare { padding: 32px; }
     .profile-layout { grid-template-columns: 1fr; gap: 44px; }
@@ -751,11 +768,11 @@
       <div class="plan">
         <p class="plan-audience">まずは現状を整理したい方へ</p>
         <div class="plan-name">現状整理パック</div>
-        <p class="plan-summary">今どこで業務が止まっているのかを整理し、改善の優先順位と最初の一手を明確にするプランです。</p>
+        <p class="plan-summary plan-summary-main">今どこで業務が止まっているのかを整理し、改善の優先順位と最初の一手を明確にするプランです。</p>
         <div class="plan-price">¥55,000</div>
         <div class="plan-freq">2週間程度</div>
-        <p class="plan-summary">「何が問題かは何となく分かるけれど、どこから手をつけるべきか分からない」状態を整理し、次に進むための土台をつくります。</p>
-        <div class="plan-detail">
+        <p class="plan-summary plan-summary-detail">「何が問題かは何となく分かるけれど、どこから手をつけるべきか分からない」状態を整理し、次に進むための土台をつくります。</p>
+        <div class="plan-detail plan-detail-content">
           <div class="plan-detail-title">内容</div>
           <ul class="plan-features">
             <li>現状ヒアリング</li>
@@ -766,7 +783,7 @@
             <li>最初の改善ステップ提案</li>
           </ul>
         </div>
-        <div class="plan-detail">
+        <div class="plan-detail plan-detail-fit">
           <div class="plan-detail-title">向いている方</div>
           <ul class="plan-features">
             <li>問題はありそうだが、整理しきれていない</li>
@@ -782,11 +799,11 @@
       <div class="plan">
         <p class="plan-audience">やりたい改善が見えていて、一緒に整えていきたい方へ</p>
         <div class="plan-name">伴走改善プラン</div>
-        <p class="plan-summary">やってほしいことや整えたいテーマがある程度見えている方向けに、依頼ベースで業務整理・運用改善・情報共有の整備を一緒に進めていくプランです。</p>
+        <p class="plan-summary plan-summary-main">やってほしいことや整えたいテーマがある程度見えている方向けに、依頼ベースで業務整理・運用改善・情報共有の整備を一緒に進めていくプランです。</p>
         <div class="plan-price">¥132,000</div>
         <div class="plan-freq">/ 月</div>
-        <p class="plan-summary">改善案を提案するだけでなく、現場に合わせて調整しながら、実際に回る形へ整えるサポートを行います。</p>
-        <div class="plan-detail">
+        <p class="plan-summary plan-summary-detail">改善案を提案するだけでなく、現場に合わせて調整しながら、実際に回る形へ整えるサポートを行います。</p>
+        <div class="plan-detail plan-detail-content">
           <div class="plan-detail-title">内容（例）</div>
           <ul class="plan-features">
             <li>依頼テーマに沿った改善支援</li>
@@ -798,7 +815,7 @@
             <li>定例での状況確認と改善提案</li>
           </ul>
         </div>
-        <div class="plan-detail">
+        <div class="plan-detail plan-detail-fit">
           <div class="plan-detail-title">向いている方</div>
           <ul class="plan-features">
             <li>整えたいテーマはある程度見えている</li>
@@ -817,11 +834,11 @@
         <div class="plan-badge">Recommended</div>
         <p class="plan-audience">課題整理から実装・定着まで深く進めたい方へ</p>
         <div class="plan-name">実行委託プラン</div>
-        <p class="plan-summary">課題の整理から一緒に行い、改善の設計・実装・定着まで深く進めていくプランです。</p>
+        <p class="plan-summary plan-summary-main">課題の整理から一緒に行い、改善の設計・実装・定着まで深く進めていくプランです。</p>
         <div class="plan-price">¥198,000</div>
         <div class="plan-freq">/ 月</div>
-        <p class="plan-summary">やってほしいことが明確でなくても構いません。どこが詰まりの原因なのか、何を優先すべきかも含めて一緒に考え、必要な改善を前に進めます。</p>
-        <div class="plan-detail">
+        <p class="plan-summary plan-summary-detail">やってほしいことが明確でなくても構いません。どこが詰まりの原因なのか、何を優先すべきかも含めて一緒に考え、必要な改善を前に進めます。</p>
+        <div class="plan-detail plan-detail-content">
           <div class="plan-detail-title">内容（例）</div>
           <ul class="plan-features">
             <li>課題の整理と優先順位づけ</li>
@@ -835,7 +852,7 @@
             <li>現場で使われる形への調整と改善</li>
           </ul>
         </div>
-        <div class="plan-detail">
+        <div class="plan-detail plan-detail-fit">
           <div class="plan-detail-title">向いている方</div>
           <ul class="plan-features">
             <li>問題が複数あり、どこから手をつけるべきか分からない</li>
