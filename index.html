@@ -981,8 +981,8 @@
               <input class="form-input" id="email" type="email" name="email" required="" placeholder="E-mail">
             </div>
             <div>
-              <label class="form-label" for="company_size">従業員規模</label>
-              <select class="form-input form-select" id="company_size" name="company_size">
+              <label class="form-label" for="company_size">従業員規模 <span style="color:#ff9b9b">*</span></label>
+              <select class="form-input form-select" id="company_size" name="company_size" required>
                 <option value="" disabled="" selected="">選択してください</option>
                 <option>1名</option>
                 <option>2〜5名</option>
@@ -1087,6 +1087,11 @@
 
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
 
     const data = new FormData(contactForm);
     // Honeypot: bot submissions are ignored
