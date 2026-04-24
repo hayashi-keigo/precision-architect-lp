@@ -284,8 +284,10 @@
     font-size: .6rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
     padding: 8px 20px; background: var(--secondary); color: #fff;
   }
-  .plan-name { font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--secondary); margin-bottom: 24px; }
+  .plan-name { font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--secondary); margin-bottom: 10px; }
   .plan.featured .plan-name { color: var(--secondary-light); }
+  .plan-summary { min-height: 3.2em; font-size: .95rem; line-height: 1.65; color: var(--on-surface-variant); margin-bottom: 22px; }
+  .plan.featured .plan-summary { color: var(--primary-dim); }
   .plan-price {
     font-family: var(--font-head); font-size: 3rem; font-weight: 900;
     letter-spacing: -.04em; color: var(--primary); line-height: 1;
@@ -345,6 +347,7 @@
     transition: transform .15s ease, border-color .2s ease, color .2s ease;
   }
   .profile-social:hover { transform: translateY(-1px); color: var(--secondary); border-color: var(--secondary); }
+  .profile-social-icon { width: 42px; height: 42px; justify-content: center; padding: 0; }
   .profile-social svg { width: 16px; height: 16px; fill: currentColor; }
 
   .cta-note { font-size: .98rem; line-height: 1.85; color: var(--primary-dim); margin: 0 0 14px; max-width: 760px; }
@@ -468,14 +471,17 @@
   .footer-social { display: inline-flex; width: 42px; height: 42px; align-items: center; justify-content: center; color: #81868c; text-decoration: none; transition: color .2s ease, transform .15s ease; }
   .footer-social:hover { color: var(--secondary); transform: translateY(-2px); }
   .footer-social svg { width: 34px; height: 34px; fill: currentColor; }
-  .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px 40px; margin-bottom: 48px; }
+  .footer-links { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .footer-link-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px 40px; }
+  .footer-link-row-legal { gap: 16px 34px; }
   .footer-links a { color: var(--on-surface); text-decoration: none; font-size: 1rem; line-height: 1.7; transition: color .2s ease; }
   .footer-links a:hover { color: var(--secondary); }
   .footer-bottom { font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; color: var(--on-surface-variant); }
   @media (max-width: 640px) {
     footer { padding: 56px 24px 32px; }
     .footer-socials { gap: 22px; margin-bottom: 30px; }
-    .footer-links { gap: 12px 24px; margin-bottom: 36px; }
+    .footer-links { gap: 12px; margin-bottom: 36px; }
+    .footer-link-row { gap: 10px 22px; }
     .footer-links a { font-size: .94rem; }
   }
   /* ─── RESPONSIVE SAFETY ───────────────────────── */
@@ -693,6 +699,7 @@
       <!-- Plan 1 -->
       <div class="plan">
         <div class="plan-name">現状整理パック</div>
+        <p class="plan-summary">まずは現状整理から。</p>
         <div class="plan-price">¥55,000</div>
         <div class="plan-freq">/ 月</div>
         <ul class="plan-features">
@@ -700,12 +707,13 @@
           <li>業務フロー図の作成</li>
           <li>改善提案レポート</li>
         </ul>
-        <button class="plan-btn outline" data-scroll-target="#contact">選択する</button>
+        <button class="plan-btn outline" data-scroll-target="#contact">相談する</button>
       </div>
 
       <!-- Plan 2 -->
       <div class="plan">
         <div class="plan-name">伴走改善プラン</div>
+        <p class="plan-summary">決まった作業の遂行。</p>
         <div class="plan-price">¥132,000</div>
         <div class="plan-freq">/ 月</div>
         <ul class="plan-features">
@@ -714,13 +722,14 @@
           <li>AI導入・プロンプト作成支援</li>
           <li>マニュアル・Notion構築</li>
         </ul>
-        <button class="plan-btn outline" data-scroll-target="#contact">選択する</button>
+        <button class="plan-btn outline" data-scroll-target="#contact">相談する</button>
       </div>
 
       <!-- Plan 3 -->
       <div class="plan featured">
         <div class="plan-badge">Recommended</div>
         <div class="plan-name">実行委託プラン</div>
+        <p class="plan-summary">現場に合わせた提案と実装。</p>
         <div class="plan-price">¥198,000</div>
         <div class="plan-freq">/ 月</div>
         <ul class="plan-features">
@@ -728,7 +737,7 @@
           <li>ツール設定の代行実施</li>
           <li>現場スタッフへの研修実施</li>
         </ul>
-        <button class="plan-btn solid" data-scroll-target="#contact">相談を開始する</button>
+        <button class="plan-btn solid" data-scroll-target="#contact">相談する</button>
       </div>
     </div>
   </div>
@@ -758,15 +767,14 @@
         <div class="profile-contact">
           <div class="profile-contact-title">Connect</div>
           <div class="profile-socials">
-            <a class="profile-social" href="https://x.com/hayap_producer/" target="_blank" rel="noopener noreferrer" aria-label="X">
+            <a class="profile-social profile-social-icon" href="https://x.com/hayap_producer/" target="_blank" rel="noopener noreferrer" aria-label="X">
               <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M12.6 1h2.2L10 6.5 15.4 15h-4.2L7.9 9.8 3.6 15H1.4l5.1-6.1L1 1h4.3L8.3 5.8 12.6 1z"/></svg>
-              <span>X</span>
             </a>
             <a class="profile-social" href="https://www.instagram.com/hayap_producer/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3.9a4.1 4.1 0 1 0 0 8.2 4.1 4.1 0 0 0 0-8.2zm0 6.8a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4z"/><path d="M12.2 1.3H3.8A2.5 2.5 0 0 0 1.3 3.8v8.4a2.5 2.5 0 0 0 2.5 2.5h8.4a2.5 2.5 0 0 0 2.5-2.5V3.8a2.5 2.5 0 0 0-2.5-2.5zm1.1 10.9c0 .6-.5 1.1-1.1 1.1H3.8c-.6 0-1.1-.5-1.1-1.1V3.8c0-.6.5-1.1 1.1-1.1h8.4c.6 0 1.1.5 1.1 1.1v8.4z"/><circle cx="12" cy="4" r="1"/></svg>
               <span>Instagram</span>
             </a>
-            <a class="profile-social" href="https://www.facebook.com/share/1B21WVdU5c/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a class="profile-social" href="https://www.facebook.com/profile.php?id=1421940646" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 5.7V4.4c0-.5.3-.6.6-.6h1.3V1.6H9c-2 0-3 1.2-3 3v1.1H4v2.3h2V15h3V8h2.1l.4-2.3H9z"/></svg>
               <span>Facebook</span>
             </a>
@@ -801,7 +809,7 @@
         <div class="cta-contact-links">
           <a class="cta-contact-link" href="https://x.com/hayap_producer/" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M12.6 1h2.2L10 6.5 15.4 15h-4.2L7.9 9.8 3.6 15H1.4l5.1-6.1L1 1h4.3L8.3 5.8 12.6 1z"/></svg><span>X</span></a>
           <a class="cta-contact-link" href="https://www.instagram.com/hayap_producer/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3.9a4.1 4.1 0 1 0 0 8.2 4.1 4.1 0 0 0 0-8.2zm0 6.8a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4z"/><path d="M12.2 1.3H3.8A2.5 2.5 0 0 0 1.3 3.8v8.4a2.5 2.5 0 0 0 2.5 2.5h8.4a2.5 2.5 0 0 0 2.5-2.5V3.8a2.5 2.5 0 0 0-2.5-2.5zm1.1 10.9c0 .6-.5 1.1-1.1 1.1H3.8c-.6 0-1.1-.5-1.1-1.1V3.8c0-.6.5-1.1 1.1-1.1h8.4c.6 0 1.1.5 1.1 1.1v8.4z"/><circle cx="12" cy="4" r="1"/></svg><span>Instagram</span></a>
-          <a class="cta-contact-link" href="https://www.facebook.com/share/1B21WVdU5c/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 5.7V4.4c0-.5.3-.6.6-.6h1.3V1.6H9c-2 0-3 1.2-3 3v1.1H4v2.3h2V15h3V8h2.1l.4-2.3H9z"/></svg><span>Facebook</span></a>
+          <a class="cta-contact-link" href="https://www.facebook.com/profile.php?id=1421940646" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 5.7V4.4c0-.5.3-.6.6-.6h1.3V1.6H9c-2 0-3 1.2-3 3v1.1H4v2.3h2V15h3V8h2.1l.4-2.3H9z"/></svg><span>Facebook</span></a>
           <a class="cta-contact-link js-email-link" href="#" data-email-user="hayashi.keigo.producer" data-email-domain="gmail.com" aria-label="Mail"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.5A1.5 1.5 0 0 1 3 2h10a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 13 14H3a1.5 1.5 0 0 1-1.5-1.5v-9zm1.2.2L8 7.3l5.3-3.6a.3.3 0 0 0-.3-.2H3a.3.3 0 0 0-.3.2zm11 1L8.4 8.2a.7.7 0 0 1-.8 0L2.3 4.7v7.8c0 .2.2.4.4.4h10.6c.2 0 .4-.2.4-.4V4.7z"/></svg><span>Mail</span></a>
         </div>
         <p class="cta-note">3営業日以内にお返事差し上げます。3営業日を過ぎても返事がない場合は、お手数ですが再度フォームよりお問い合わせください。</p>
@@ -861,16 +869,20 @@
       <a class="footer-social" href="https://www.instagram.com/hayap_producer/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3.9a4.1 4.1 0 1 0 0 8.2 4.1 4.1 0 0 0 0-8.2zm0 6.8a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4z"/><path d="M12.2 1.3H3.8A2.5 2.5 0 0 0 1.3 3.8v8.4a2.5 2.5 0 0 0 2.5 2.5h8.4a2.5 2.5 0 0 0 2.5-2.5V3.8a2.5 2.5 0 0 0-2.5-2.5zm1.1 10.9c0 .6-.5 1.1-1.1 1.1H3.8c-.6 0-1.1-.5-1.1-1.1V3.8c0-.6.5-1.1 1.1-1.1h8.4c.6 0 1.1.5 1.1 1.1v8.4z"/><circle cx="12" cy="4" r="1"/></svg>
       </a>
-      <a class="footer-social" href="https://www.facebook.com/share/1B21WVdU5c/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <a class="footer-social" href="https://www.facebook.com/profile.php?id=1421940646" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 5.7V4.4c0-.5.3-.6.6-.6h1.3V1.6H9c-2 0-3 1.2-3 3v1.1H4v2.3h2V15h3V8h2.1l.4-2.3H9z"/></svg>
       </a>
     </div>
     <div class="footer-links" role="navigation" aria-label="Footer navigation">
-      <a href="#contact">お問い合わせ</a>
-      <a href="#pricing">料金プラン</a>
-      <a href="#profile">運営者情報</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-      <a href="commercial-transaction.html">特定商取引法に基づく表記</a>
+      <div class="footer-link-row footer-link-row-main">
+        <a href="#contact">お問い合わせ</a>
+        <a href="#pricing">料金プラン</a>
+        <a href="#profile">運営者情報</a>
+      </div>
+      <div class="footer-link-row footer-link-row-legal">
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="commercial-transaction.html">特定商取引法に基づく表記</a>
+      </div>
     </div>
     <div class="footer-bottom">© 2026 The Precision Architect</div>
   </div>
