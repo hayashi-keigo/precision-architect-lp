@@ -551,20 +551,80 @@
     .profile-img { max-width: 560px; }
   }
   @media (max-width: 640px) {
-    body { overflow-x: hidden; }
-    .hero { min-height: 88vh; padding: 96px 24px 56px; }
-    .hero-headline { font-size: clamp(3rem, 14vw, 4.2rem); max-width: 100%; overflow-wrap: anywhere; }
+    body { overflow-x: hidden; font-size: 16px; }
+    nav { padding: 10px 14px; background: rgba(248,249,250,.96); }
+    .nav-links { width: 100%; gap: 10px; }
+    .nav-links a { font-size: .72rem; letter-spacing: .02em; }
+    .nav-cta { padding: 9px 14px; font-size: .72rem; flex: 0 0 auto; }
+
+    .hero { min-height: auto; padding: 96px 20px 48px; }
+    .hero-eyebrow { font-size: .72rem; letter-spacing: .08em; margin-bottom: 22px; }
+    .hero-eyebrow::before { width: 18px; }
+    .hero-headline { font-size: clamp(2.9rem, 16vw, 4rem); max-width: 100%; line-height: 1.02; margin-bottom: 34px; overflow-wrap: normal; }
     .hero-headline em { display: block; }
-    .hero-sub { font-size: 1rem; }
-    .hero-metric { padding-left: 20px; }
+    .hero-bottom { gap: 24px; }
+    .hero-sub { font-size: .98rem; line-height: 1.9; }
+    .hero-metric { padding-left: 18px; }
     .hero-metric-num { font-size: 3rem; }
-    .plan { padding: 36px 24px; }
+    .hero-metric-label { font-size: .75rem; line-height: 1.45; }
+    .hero-cta-block { width: 100%; }
+    .hero-cta-primary { width: 100%; text-align: center; padding: 18px 20px; font-size: .95rem; }
+    .hero-cta-secondary { align-self: center; font-size: .82rem; }
+
+    .section { padding: 72px 20px; }
+    .eyebrow { font-size: .68rem; letter-spacing: .14em; margin-bottom: 18px; }
+    .problem-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 42px; }
+    .problem-headline { font-size: clamp(1.85rem, 8vw, 2.35rem); line-height: 1.18; letter-spacing: -.04em; }
+    .problem-aside { font-size: .94rem; padding-bottom: 0; }
+    .problem-cards { grid-template-columns: 1fr; gap: 1px; }
+    .problem-card { padding: 34px 22px; clip-path: none; border-radius: 2px; }
+    .problem-num { margin-bottom: 18px; }
+
+    .ba-intro { grid-template-columns: 1fr; gap: 22px; margin-bottom: 42px; }
+    .ba-intro-desc { max-width: none; font-size: .96rem; }
+    .ba-case { grid-template-columns: 1fr; gap: 1px; }
+    .ba-before, .ba-after { padding: 30px 20px; }
+    .ba-after { padding-bottom: 30px; }
+    .ba-tag { margin-bottom: 14px; }
+    .ba-case-body { font-size: .93rem; line-height: 1.9; overflow-wrap: anywhere; }
+    .ba-metric { position: static; margin-top: 22px; align-items: flex-start; text-align: left; max-width: none; width: fit-content; }
+    .ba-metric-num { font-size: 1.85rem; }
+    .ba-connector { display: none; }
+
+    .process-grid { grid-template-columns: 1fr; margin-top: 42px; border-top: 1px solid var(--outline); }
+    .process-step { padding: 30px 0; border-right: none; border-bottom: 1px solid var(--outline); }
+    .process-step:nth-child(3n), .process-step:nth-child(4), .process-step:nth-child(5), .process-step:nth-child(6) { border-right: none; border-bottom: 1px solid var(--outline); }
+    .process-step:last-child { border-bottom: none; }
+    .process-num { font-size: 3.2rem; margin-bottom: 18px; }
+
+    .pricing-grid { margin-top: 42px; gap: 12px; background: transparent; }
+    .plan { padding: 34px 22px; border: 1px solid var(--outline); border-radius: 18px; }
+    .plan.featured { border-color: transparent; }
+    .plan-badge { border-radius: 0 18px 0 10px; }
     .plan-price { font-size: 2.5rem; }
-    .plan-compare { padding: 28px 22px; }
+    .plan-detail { margin-bottom: 24px; }
+    .plan-features li { font-size: .92rem; }
+    .plan-compare { padding: 28px 22px; border-radius: 18px; }
+
+    .profile-layout { gap: 32px; }
+    .profile-img { max-width: none; clip-path: none; border-radius: 18px; }
+    .profile-tags { margin-top: 18px; }
     .profile-name { font-size: 2.3rem; }
+    .profile-sub { margin-bottom: 26px; }
     .profile-bio { font-size: .96rem; line-height: 1.9; }
     .profile-socials { gap: 8px; }
     .profile-social { padding: 9px 12px; font-size: .82rem; }
+
+    .cta-section { padding: 78px 20px; }
+    .cta-headline { font-size: clamp(2.6rem, 14vw, 4rem); margin-bottom: 42px; }
+    .cta-layout { grid-template-columns: 1fr; gap: 38px; }
+    .cta-desc { font-size: .98rem; margin-bottom: 28px; }
+    .cta-big-btn { width: 100%; justify-content: center; padding: 20px 24px; }
+    .cta-form-wrap { padding: 30px 22px; border-radius: 18px; }
+    .form-row { grid-template-columns: 1fr; gap: 26px; }
+    .form-group { margin-bottom: 26px; }
+    .form-label { white-space: normal; line-height: 1.55; letter-spacing: .12em; }
+    .form-submit { min-height: 56px; }
   }
 
 </style>
