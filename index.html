@@ -455,6 +455,9 @@
   #form-status.success { background: rgba(0,99,151,.1); color: var(--secondary); }
   #form-status.error   { background: rgba(186,26,26,.08); color: #ba1a1a; }
   .form-submit:disabled { opacity: .5; cursor: not-allowed; }
+  .form-privacy-note { margin: -10px 0 18px; font-size: .86rem; line-height: 1.7; color: var(--on-surface-variant); text-align: center; }
+  .form-privacy-note a { color: var(--secondary); font-weight: 700; text-decoration: none; }
+  .form-privacy-note a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
   /* decorative */
   .cta-deco {
@@ -976,6 +979,7 @@
             <textarea class="form-input" id="message" name="message" rows="3" placeholder="現状の課題をご記入ください"></textarea>
           </div>
           <div id="form-status" style="display:none"></div>
+          <p class="form-privacy-note">送信前に、<a href="privacy.html" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>をご確認ください。</p>
           <button type="submit" class="form-submit" id="form-submit-btn">送信する</button>
         </form>
       </div>
